@@ -1,0 +1,23 @@
+cabal-version: 2.2
+
+name:           aaaa
+version:        0.3.0
+synopsis:       A
+description:    A
+build-type:     Simple
+
+library
+  exposed-modules:
+      Unsafe
+  hs-source-dirs:
+    src
+  build-depends:
+      base >=4.7 && <5
+    , time
+  default-language: Haskell2010
+
+test-suite aaaa-test
+  type: exitcode-stdio-1.0
+  main-is: Test.hs
+  build-depends: base, aaaa
+  default-language: Haskell2010
