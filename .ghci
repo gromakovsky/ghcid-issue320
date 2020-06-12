@@ -1,1 +1,3 @@
+:set -package=time
 :set -isrc
+:load Test.hs

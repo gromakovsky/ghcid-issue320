@@ -4,3 +4,4 @@ module Unsafe
 
 import Data.Maybe (fromJust)
 import Data.Time ()
+import Numeric ()

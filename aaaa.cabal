@@ -6,18 +6,34 @@ synopsis:       A
 description:    A
 build-type:     Simple
 
+library aaaa-internal
+  exposed-modules:
+    Numeric
+  hs-source-dirs:
+    internal
+  build-depends:
+      base
+  default-language: Haskell2010
+  mixins:
+    base hiding (Numeric)
+
 library
   exposed-modules:
-      Unsafe
+    Unsafe
   hs-source-dirs:
     src
   build-depends:
-      base >=4.7 && <5
+      base
+    , aaaa-internal
     , time
   default-language: Haskell2010
+  mixins:
+    base hiding (Numeric)
 
 test-suite aaaa-test
   type: exitcode-stdio-1.0
   main-is: Test.hs
-  build-depends: base, aaaa
+  build-depends: base, aaaa, aaaa-internal
   default-language: Haskell2010
+  mixins:
+    base hiding (Numeric)
